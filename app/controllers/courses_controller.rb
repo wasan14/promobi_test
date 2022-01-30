@@ -10,11 +10,7 @@ class CoursesController < ApplicationController
 
 	def index
 		@courses = Course.all
-		if @courses.exists?
-			render json: @courses, status: 200
-		else
-			render json: {message: "No courses created."}, status: 200
-		end
+		render json: @courses, status: 200
 	end
 
 	private
